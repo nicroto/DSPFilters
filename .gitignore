@@ -2,3 +2,5 @@ build
 .waf*
 .lock*
 .*.sw*
+
+Demo/Builds
