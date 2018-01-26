@@ -41,7 +41,7 @@ THE SOFTWARE.
 
 FilteringAudioSource::FilteringAudioSource ()
   : m_sampleRate (0)
-  , m_source (0)
+  , m_source ()
 {
 }
 
@@ -114,13 +114,13 @@ void FilteringAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& buff
   if (m_filter)
   {
     float* channels[2];
-    channels[0] = bufferToFill.buffer->getArrayOfChannels()[0] + bufferToFill.startSample;
-    channels[1] = bufferToFill.buffer->getArrayOfChannels()[1] + bufferToFill.startSample;
+    channels[0] = bufferToFill.buffer->getArrayOfWritePointers()[0] + bufferToFill.startSample;
+    channels[1] = bufferToFill.buffer->getArrayOfWritePointers()[1] + bufferToFill.startSample;
 
     AudioSampleBuffer buffer (channels,
                               bufferToFill.buffer->getNumChannels(),
                               bufferToFill.numSamples);
 
-    m_filter->process (buffer.getNumSamples(), buffer.getArrayOfChannels());
+    m_filter->process (buffer.getNumSamples(), buffer.getArrayOfWritePointers());
   }
 }

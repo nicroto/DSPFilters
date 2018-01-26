@@ -675,7 +675,7 @@ void MainPanel::onFilterParameters ()
 
 //------------------------------------------------------------------------------
 
-const StringArray MainPanel::getMenuBarNames()
+StringArray MainPanel::getMenuBarNames()
 {
   StringArray names;
   names.add (TRANS("File"));
@@ -683,7 +683,7 @@ const StringArray MainPanel::getMenuBarNames()
   return names;
 }
 
-const PopupMenu MainPanel::getMenuForIndex (int topLevelMenuIndex, const String& menuName)
+PopupMenu MainPanel::getMenuForIndex (int topLevelMenuIndex, const String& menuName)
 {
   PopupMenu menu;
   ApplicationCommandManager* commandManager = MainApp::getInstance().getCommandManager();

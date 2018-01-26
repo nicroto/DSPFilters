@@ -44,8 +44,8 @@ CpuMeter::CpuMeter (AudioDeviceManager& audioDeviceManager)
   setSize (80, 18);
 
   m_label = new Label;
-  m_label->setText ("CPU", false);
-  m_label->setBorderSize (0, 0);
+  m_label->setText ("CPU", dontSendNotification);
+  m_label->setBorderSize (BorderSize<int> (0));
   m_label->setSize (m_label->getFont().getStringWidth (m_label->getText()), 18);
   m_label->setTopLeftPosition (0, 0);
   addToLayout (m_label, anchorTopLeft, anchorBottomLeft);

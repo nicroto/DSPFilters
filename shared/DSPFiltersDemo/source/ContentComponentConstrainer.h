@@ -94,7 +94,7 @@ private:
   void applyBoundsToComponent (Component* component,
                                const Rectangle<int>& bounds)
   {
-    m_originalConstrainer->applyBoundsToComponent (component, bounds);
+    m_originalConstrainer->applyBoundsToComponent (*component, bounds);
   }
 
   void copyConstraints (ComponentBoundsConstrainer& from)

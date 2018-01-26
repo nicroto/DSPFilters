@@ -67,7 +67,7 @@ void GroupDelayChart::paintContents (Graphics& g)
   drawGroupDelayLine (g, -1.f);
 
   g.setColour (Colours::blue);
-  g.strokePath (m_path, 1, t);
+  g.strokePath (m_path, PathStrokeType (1), t);
 }
 
 /*

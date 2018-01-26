@@ -67,8 +67,8 @@ public:
 
   void onFilterParameters ();
 
-  const StringArray getMenuBarNames();
-  const PopupMenu getMenuForIndex (int topLevelMenuIndex, const String& menuName);
+  StringArray getMenuBarNames() override;
+  PopupMenu getMenuForIndex (int topLevelMenuIndex, const String& menuName) override;
   void menuItemSelected (int menuItemID, int topLevelMenuIndex);
 
 private:
